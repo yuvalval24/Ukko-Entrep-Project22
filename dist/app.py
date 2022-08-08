@@ -33,6 +33,5 @@ db = firebase.database()
 def about():
   return render_template("about.html")
 
-
-
-print("something's wrong")
+if __name__ == "__main__":  # Makes sure this is the main process
+    app.run(debug=True)
