@@ -30,8 +30,20 @@ db = firebase.database()
 
 
 @app.route('/')
-def about():
+def home():
+  return render_template("index.html")
+
+@app.route('/Q&A')
+def QnA():
   return render_template("about.html")
+
+@app.route('/media')
+def media():
+  return render_template("contact.html")
+
+@app.route('/sign')
+def sign():
+  return render_template("post.html")
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
