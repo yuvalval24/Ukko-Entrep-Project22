@@ -11292,3 +11292,11 @@ header.masthead .site-heading .h1 {
   margin: 10px;
   font-family: "Lucida Console", "Courier New", monospace;
 }
+.close_button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
