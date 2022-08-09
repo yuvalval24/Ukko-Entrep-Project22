@@ -11311,13 +11311,13 @@ header.masthead .site-heading .h1 {
 .centerq {
 margin: auto;
 width: 60%;
-border: 5px solid rgba(255,198,0,0.50);
+border: 5px solid rgba(255,198,0,0.2);
 padding: 10px;
 }
 
 .yellow-b {
-  border: 5px solid rgba(255,198,0,0.50);
-  /*padding: 10px; */
+  border: 5px solid rgba(255,198,0,0.2);
+  padding: 10px; 
 
 
 }
