@@ -29,21 +29,29 @@ auth = firebase.auth()
 db = firebase.database()
 
 
-@app.route('/')
+@app.route('/', methods = ["get", "post"])
 def home():
-  return render_template("post.html")
+    print('post0')
+    if request.method == "post":
+        print('post1')
+        try:
+            email = request.form["email"]
+            print("email:", email)
+        except:
+            print("failed")
+    return render_template("post.html")
 
-@app.route('/Q&A')
+@app.route('/Q&A', methods = ["get", "post"])
 def QnA():
-  return render_template("about.html")
+    return render_template("about.html")
 
-@app.route('/media')
+@app.route('/media', methods = ["get", "post"])
 def media():
-  return render_template("index.html")
+    return render_template("index.html")
 
-@app.route('/sign')
+@app.route('/sign', methods = ["get", "post"])
 def sign():
-  return render_template("contact.html")
+    return render_template("contact.html")
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
