@@ -3000,6 +3000,8 @@ textarea.form-control-lg {
   color: #06103E;
   background-color: #FFC600;
   border-color: #06103E;
+  border-radius: 30px;
+
 }
 .btn-primary:hover {
   color: #fff;
@@ -7084,10 +7086,12 @@ textarea.form-control-lg {
 
 .mb-4 {
   margin-bottom: 1.5rem !important;
+
 }
 
 .mb-5 {
   margin-bottom: 3rem !important;
+
 }
 
 .mb-auto {
@@ -11300,4 +11304,20 @@ header.masthead .site-heading .h1 {
     cursor: pointer;
     overflow: hidden;
     outline: none;
+
+}
+
+
+.centerq {
+margin: auto;
+width: 60%;
+border: 5px solid rgba(255,198,0,0.2);
+padding: 10px;
+}
+
+.yellow-b {
+  border: 5px solid rgba(255,198,0,0.2);
+  padding: 10px; 
+
+
 }
