@@ -30,10 +30,49 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/Q&A">Q&A</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/media">Media</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/sign">Sign In/Up</a></li>
+                        <button class="log_in" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1">Log In</button>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-2">
+                                <img src="https://i.ibb.co/mCRx763/Screenshot-from-2022-08-01-23-19-53.png">
+                            </div>
+                            <div class="col-4">
+                                <div class="row"></div>
+                                <h5 style="font-family: 'Lucida Console', 'Courier New', monospace; padding-top: 50px; padding-left: 20px;">Log In</h5>
+                                <p style="font-size: small; padding-left: 20px;">By continuing, you agree to our User Agreement and Privacy Policy.</p>
+                                <p class="h2"><span class="h2-span">OR</span></p>
+                                <form method="POST" action="/">
+                                    <div>
+                                        <div>
+                                            <input class="log" type="email" placeholder="email" name="email-log" id="emailStr" required>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="input-group">
+                                            <input class="log" type="password" placeholder="password"  name="password-log" minlength="6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <input class="log-button" type="submit" name="log in" value="Log In"/>
+                                    </div>
+                                </form>
+                                <p style="padding-left: 20px;">New to Seddit? SIGN UP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
@@ -61,7 +100,7 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form action="/" mehtod="post">
                                 <div class="form-floating">
                                     <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                     <label for="name">Name</label>
