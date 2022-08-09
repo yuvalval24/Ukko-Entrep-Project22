@@ -51,6 +51,14 @@ def media():
 
 @app.route('/sign', methods = ["get", "post"])
 def sign():
+    print('post0')
+    if request.method == "post":
+        print('post1')
+        try:
+            email = request.form["email"]
+            print("email:", email)
+        except:
+            print("failed")
     return render_template("contact.html")
 
 if __name__ == "__main__":  # Makes sure this is the main process
