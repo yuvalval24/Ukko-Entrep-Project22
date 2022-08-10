@@ -49,19 +49,24 @@ def home():
             db.child('Users').child(login_session["user"]["localId"]).set({"email":email, "password":password, "name":name, "message":message})
         except:
             print("not sign up")
-    return render_template("post.html")
+    return render_template("post.html", logged = (len(login_session)>0))
 
 @app.route('/Q&A', methods = ["get", "post"])
 def QnA():
-    return render_template("about.html")
+    return render_template("about.html", logged = (len(login_session)>0))
 
 @app.route('/media', methods = ["get", "post"])
 def media():
-    return render_template("index.html")
+    return render_template("index.html", logged = (len(login_session)>0))
 
 @app.route('/sign', methods = ["get", "post"])
 def sign():
-    return render_template("contact.html")
+    return render_template("contact.html", logged = (len(login_session)>0))
+
+@app.route('/out', methods = ["get", "post"])
+def out():
+    login_session.clear()
+    return redirect("/")
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
