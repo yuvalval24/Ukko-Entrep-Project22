@@ -34,6 +34,51 @@
   display: table;
   clear: both;
 }
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border: 5px solid rgba(255,198,0,0.2);
+  
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #FFC600;
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
+}
+.p1 {
+  font-family: "Times New Roman", Times, serif;
+}
         </style>
     </head>
     <body>
@@ -249,28 +294,56 @@
 
 
 
+<center>
+<div class="centerq">
+<h3 class = " yellow-b">Food allergies and gluten-related disorders are on the rise,
+with significant social, health, and economic impact</h3>
+</div>
+<br>
+<h2></h2>
+<!-- <p>Hover over the image to see the effect.</p> -->
 
+<div class="container">
+  <img src="https://i.ibb.co/Zz9P27J/pic1.png" alt="Avatar" class="image" style="width:70%">
+  <div class="middle">
+    <div class="text">each year is spent on healthcare costs related to food allergies and disorders</div>
+  </div>
+</div>
+<br>
 
+<div class="container">
+  <img src="https://i.ibb.co/5xKyLLM/Screenshot-from-2022-08-10-10-55-20.png" alt="Avatar" class="image" style="width:70%">
+  <div class="middle">
+    <div class="text">1 in every 13 children in
+the United States is affected by food allergies</div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <img src="https://i.ibb.co/2k8jJWQ/pic3.png" alt="Avatar" class="image" style="width:70%">
+  <div class="middle">
+    <div class="text">new cases of celiac
+disease have doubled every fifteen years</div>
+  </div>
+</div>
+<br>
+</center>
 
 
         <!-- sectioooooooooooooooooooooooon -->
-        <section id="section02">
+<!--      <section id="section02">
         <div class="row">
             <div id="bgLayers_comp-j9rasopw" data-hook="bgLayers" class="_3wnIc">
                 <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
                 <div id="bgMedia_comp-j9rasopw" class="_2GUhU"></div>
             </div>
-            <!-- <div data-testid="columns" class="_1uldx">
-                <div id="comp-j9rasoqu" class="_1vNJf"> -->
 
-                    <!-- heading1 -->
+
                     <div id="bgLayers_comp-j9rasoqu" data-hook="bgLayers" class="_3wnIc">
                         <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
                         <div id="bgMedia_comp-j9rasoqu" class="_2GUhU"></div>
                     </div>
-<!--                     <div data-mesh-id="comp-j9rasoquinlineContent" data-testid="inline-content" class="">
-                        <div data-mesh-id="comp-j9rasoquinlineContent-gridContainer" data-testid="mesh-container-content"> -->
-                            <!-- the random words -->
+
                             <div id="comp-j9raurza" class="_1Q9if _3bcaz" data-testid="richTextElement">
                                 <h2 class="font_2" style="font-size:35px; text-align:center;">
                                     <span style="font-size:35px;">
@@ -303,12 +376,12 @@
 </h2>
 </div>
 
-<!-- 25 billion -->
+
 <div class="column">
 <div id="comp-jobs29d2" class="_1KV2M">
     <div data-mesh-id="comp-jobs29d2inlineContent" data-testid="inline-content" class="">
         <div data-mesh-id="comp-jobs29d2inlineContent-gridContainer" data-testid="mesh-container-content">
-            <!-- first div -->
+
             <div id="comp-j9rb9lzk" class="_1Q9if _3bcaz" data-testid="richTextElement">
                 <h2 class="font_2" style="font-size:107px; line-height:1em; text-align:center;">
                     <span style="font-size:107px;">
@@ -319,7 +392,7 @@
                 </h2>
             </div>
 
-            <!-- random words 1 -->
+            
             <div id="comp-j9rbbgcn" class="_1Q9if _3bcaz" data-testid="richTextElement">
                 <h2 class="font_2" style="font-size:20px; text-align:center;">
                     <span style="color:#635F54;">
@@ -341,10 +414,9 @@
     </div>
 </div>
 </div>
+ -->
 
-
-
-            <!-- the picture of kids -->
+<!-- 
             <div class="column">
             <div id="comp-j9rc4dl1" class="XUUsC">
                 <div data-testid="linkElement" class="xQ_iF">
@@ -354,7 +426,6 @@
                 </div>
             </div>
 
-            <!-- random words 2 -->
             <div id="comp-j9rbptf9" class="_1Q9if _3bcaz" data-testid="richTextElement"><h2 class="font_2" style="font-size:20px; text-align:center;">
                 <span style="font-family:wfont_feedb0_4bd3fc6179794ef1a5cd29760b641ad7,wf_4bd3fc6179794ef1a5cd29760,orig_roboto_light;">
                     <span style="font-size:15px;">
@@ -374,10 +445,9 @@
         </span>
     </span>
 </h2>
-</div> <!--this is where it ends -->
+</div> 
 </div>
 
-<!-- staircase image -->
 <div class="column">
 <div id="comp-j9zepj5e" class="XUUsC">
     <div data-testid="linkElement" class="xQ_iF">
@@ -387,7 +457,6 @@
     </div>
 </div>
 
-<!-- random words 3 -->
 <div id="comp-j9rc9s3r1" class="_1Q9if _3bcaz" data-testid="richTextElement">
     <h2 class="font_2" style="font-size:15px; text-align:center;">
         <span style="font-family:wfont_feedb0_4bd3fc6179794ef1a5cd29760b641ad7,wf_4bd3fc6179794ef1a5cd29760,orig_roboto_light;"><span style="font-size:15px;">
@@ -395,8 +464,8 @@
             <span style="color:#CF7D29;">&nbsp;celiac</span>
         </span>
     </span>
-</h2>
-
+</h2> -->
+<!-- 
 <h2 class="font_2" style="font-size:15px; text-align:center;">
     <span style="font-family:wfont_feedb0_4bd3fc6179794ef1a5cd29760b641ad7,wf_4bd3fc6179794ef1a5cd29760,orig_roboto_light;">
         <span style="font-size:15px;">
@@ -416,12 +485,8 @@
 </div>
 </div>
 
-<!-- </div>
-</div>
-</div>
-</div> -->
 </div> 
-</section>
+</section>  -->
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">

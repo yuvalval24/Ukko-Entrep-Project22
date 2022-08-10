@@ -3001,6 +3001,7 @@ textarea.form-control-lg {
   background-color: #FFC600;
   border-color: #06103E;
   border-radius: 30px;
+  padding: 1rem;
 
 }
 .btn-primary:hover {
@@ -11318,6 +11319,8 @@ padding: 10px;
 .yellow-b {
   border: 5px solid rgba(255,198,0,0.2);
   padding: 10px; 
+  font-family: "Times New Roman", Times, serif;
+
 
 
 }
