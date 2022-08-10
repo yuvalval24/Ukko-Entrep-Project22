@@ -29,6 +29,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/Q&A">Q&A</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/media">Media</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/client-questions">Client Questions</a></li>
                         {% if not logged %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="modal" data-bs-target="#exampleModalCenter0" href="/">Sign In/Up</a></li>
                         {% else %}
@@ -113,6 +114,11 @@
                                                         <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations=""  value=""></textarea>
                                                         <label for="message">Message</label>
                                                         <!-- <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div> -->
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input class="form-control" name="code" id="code" type="text" placeholder="Enter your code..." data-sb-validations="" value=""/>
+                                                        <label for="code">Admin Code</label>
+                                                        <div class="invalid-feedback" data-sb-feedback="code:required">A name is required.</div>
                                                     </div>
                                                     <br />
                                                     <!-- Submit success message-->
@@ -329,7 +335,6 @@ Ukko’s goal is to create a product with breaks out of these trade-offs to have
 <br>
 <br>
 
-
         <!-- Main Content-->
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
@@ -339,21 +344,21 @@ Ukko’s goal is to create a product with breaks out of these trade-offs to have
                         <div class="my-5">
                             <div class="yellow-b">
                            
-                            <form action="/" mehtod="post">
+                            <form action="/Q&A" method="POST">
                                 <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                     <label for="name"> Full Name</label>
                                     <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
                                     <label for="email">Email address</label>
                                     <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                     <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                                 </div>
 
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="question" placeholder="Enter your question here..." style="height: 12rem" data-sb-validations="required"></textarea>
+                                    <textarea class="form-control" id="question" name="question" placeholder="Enter your question here..." style="height: 12rem" data-sb-validations="required"></textarea>
                                     <label for="question">Your question</label>
                                     <div class="invalid-feedback" data-sb-feedback="message:required">A question is required.</div>
                                 </div>
@@ -383,17 +388,6 @@ Ukko’s goal is to create a product with breaks out of these trade-offs to have
             </div>
 
         </main>
-
-
-
-
-
-
-
-
-
-
-
 
         <footer class="border-top">
             <div class="container px-4 px-lg-5">

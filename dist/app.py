@@ -44,24 +44,40 @@ def home():
             email = request.form["email"]
             password = request.form["password"]
             message = request.form["message"]
+            admin = (request.form["code"] == "Ukko2022")
             # print(name+"\n"+email+"\n"+password+"\n"+message)
             login_session['user'] = auth.create_user_with_email_and_password(email, password)
-            db.child('Users').child(login_session["user"]["localId"]).set({"email":email, "password":password, "name":name, "message":message})
+            db.child('Users').child(login_session["user"]["localId"]).set({"email":email, "password":password, "name":name, "message":message, "admin":admin})
         except:
             print("not sign up")
     return render_template("post.html", logged = (len(login_session)>0))
 
 @app.route('/Q&A', methods = ["get", "post"])
 def QnA():
+    if request.method == "POST":
+        try:
+            print("post")
+            name = request.form["name"]
+            print("name")
+            email = request.form["email"]
+            print("email")
+            question = request.form["question"]
+            print("question")
+            db.child("Requests").push({"name":name, "email":email,"question":question, "status":"unresolved"})
+            print("submitted")
+        except:
+            print("something went wrong")
     return render_template("about.html", logged = (len(login_session)>0))
 
 @app.route('/media', methods = ["get", "post"])
 def media():
     return render_template("index.html", logged = (len(login_session)>0))
 
-@app.route('/sign', methods = ["get", "post"])
+@app.route('/client-questions', methods = ["get", "post"])
 def sign():
-    return render_template("contact.html", logged = (len(login_session)>0))
+    questions = dict(db.child("Requests").get().val())
+    print(questions)
+    return render_template("contact.html", logged = (len(login_session)>0), questions =questions, keys=list(questions.keys()))
 
 @app.route('/out', methods = ["get", "post"])
 def out():
