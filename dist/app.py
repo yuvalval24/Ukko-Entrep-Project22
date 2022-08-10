@@ -53,14 +53,28 @@ def home():
 
 @app.route('/Q&A', methods = ["get", "post"])
 def QnA():
+    if request.method == "POST":
+        try:
+            print("post")
+            name = request.form["name"]
+            print("name")
+            email = request.form["email"]
+            print("email")
+            question = request.form["question"]
+            print("question")
+            db.child("Requests").push({"name":name, "email":email,"question":question, "status":"unresolved"})
+            print("submitted")
+        except:
+            print("something went wrong")
     return render_template("about.html", logged = (len(login_session)>0))
 
 @app.route('/media', methods = ["get", "post"])
 def media():
     return render_template("index.html", logged = (len(login_session)>0))
 
-@app.route('/sign', methods = ["get", "post"])
+@app.route('/find-us', methods = ["get", "post"])
 def sign():
+    
     return render_template("contact.html", logged = (len(login_session)>0))
 
 @app.route('/out', methods = ["get", "post"])
