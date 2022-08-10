@@ -100,6 +100,9 @@
                         {% else %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/out">Log Out</a></li>
                         {% endif %}
+                        {% if admin %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/client-questions">Client Questions</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -179,6 +182,11 @@
                                                         <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations=""  value=""></textarea>
                                                         <label for="message">Message</label>
                                                         <!-- <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div> -->
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <input class="form-control" name="code" id="code" type="text" placeholder="Enter your code..." data-sb-validations="" value=""/>
+                                                        <label for="code">Admin Code</label>
+                                                        <div class="invalid-feedback" data-sb-feedback="code:required">A name is required.</div>
                                                     </div>
                                                     <br />
                                                     <!-- Submit success message-->

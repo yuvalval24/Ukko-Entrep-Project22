@@ -50,7 +50,15 @@ def home():
             db.child('Users').child(login_session["user"]["localId"]).set({"email":email, "password":password, "name":name, "message":message, "admin":admin})
         except:
             print("not sign up")
-    return render_template("post.html", logged = (len(login_session)>0))
+    logged = (len(login_session)>0)
+    if logged:
+        if dict(db.child('Users').child(login_session["user"]["localId"]).get().val())["admin"]:
+            admin = True
+        else:
+            admin = False
+    else:
+        admin = False
+    return render_template("post.html", logged = (len(login_session)>0), admin=admin)
 
 @app.route('/Q&A', methods = ["get", "post"])
 def QnA():
@@ -67,22 +75,51 @@ def QnA():
             print("submitted")
         except:
             print("something went wrong")
-    return render_template("about.html", logged = (len(login_session)>0))
+    logged = (len(login_session)>0)
+    if logged:
+        if dict(db.child('Users').child(login_session["user"]["localId"]).get().val())["admin"]:
+            admin = True
+        else:
+            admin = False
+    else:
+        admin = False
+    return render_template("about.html", logged = (len(login_session)>0), admin=admin)
 
 @app.route('/media', methods = ["get", "post"])
 def media():
-    return render_template("index.html", logged = (len(login_session)>0))
+    logged = (len(login_session)>0)
+    if logged:
+        if dict(db.child('Users').child(login_session["user"]["localId"]).get().val())["admin"]:
+            admin = True
+        else:
+            admin = False
+    else:
+        admin = False
+    return render_template("index.html", logged = (len(login_session)>0), admin=admin)
 
 @app.route('/client-questions', methods = ["get", "post"])
 def sign():
     questions = dict(db.child("Requests").get().val())
     print(questions)
-    return render_template("contact.html", logged = (len(login_session)>0), questions =questions, keys=list(questions.keys()))
+    logged = (len(login_session)>0)
+    if logged:
+        if dict(db.child('Users').child(login_session["user"]["localId"]).get().val())["admin"]:
+            admin = True
+        else:
+            admin = False
+    else:
+        admin = False
+    return render_template("contact.html", logged = (len(login_session)>0), questions =questions, keys=list(questions.keys()), admin=admin)
 
 @app.route('/out', methods = ["get", "post"])
 def out():
     login_session.clear()
     return redirect("/")
+
+@app.route('/resolve/<string:question>', methods = ["get", "post"])
+def resolve(question):
+    db.child("Requests").child(question).update({"status":"resolved"})
+    return redirect("/client-questions")
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)

@@ -29,11 +29,13 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/Q&A">Q&A</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/media">Media</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/client-questions">Client Questions</a></li>
                         {% if not logged %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="modal" data-bs-target="#exampleModalCenter0" href="/">Sign In/Up</a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/out">Log Out</a></li>
+                        {% endif %}
+                        {% if admin %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/client-questions">Client Questions</a></li>
                         {% endif %}
                     </ul>
                 </div>
